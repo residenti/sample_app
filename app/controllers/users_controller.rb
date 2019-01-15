@@ -8,11 +8,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user]) # Not the final implementation!
+    @user = User.new(user_params)
     if @user.save
       # Handle a successful save.
     else
       render 'new'
     end
   end
+
+  # privateメソッド以降のインデントを1段深くすることで、
+  # privateメソッドの場所が簡単に見つけやすくなる.
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email,
+                                   :password, :password_confirmation)
+    end
 end
