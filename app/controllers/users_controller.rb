@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   # privateメソッド以降のインデントを1段深くすることで、
   # privateメソッドの場所が簡単に見つけやすくなる.
   private
