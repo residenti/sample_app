@@ -5,6 +5,10 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
+  def correct_user?(user)
+    user == current_user
+  end
+
   # if user logged in, return user logged in.
   def current_user
     if (user_id = session[:user_id])
