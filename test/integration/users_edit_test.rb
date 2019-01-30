@@ -21,8 +21,11 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   test "successful edit with friendly forwarding" do
     get edit_user_path(@user)
+    # 皇族でリダイレクト先がユーザの編集ページであるかテストされている為不要.
+    # assert_equal "http://www.example.com#{edit_user_path(@user)}", session[:forwarding_url]
     log_in_as(@user)
     assert_redirected_to edit_user_url(@user)
+    assert_nil session[:forwarding_url]
     name  = "Foo Bar"
     email = "foo@bar.com"
     patch user_path(@user), params: { user: { name:  name,
