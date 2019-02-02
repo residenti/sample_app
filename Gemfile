@@ -12,6 +12,9 @@ gem 'rails', '~> 5.1.6'
 gem 'bcrypt',         '3.1.12'
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker', '1.7.3'
+# Pagination library for Rails, Sinatra, Merb, DataMapper, and more https://github.com/mislav/will_paginate/wiki
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 # bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
 gem 'bootstrap-sass', '3.3.7'
 # Use Puma as the app server
